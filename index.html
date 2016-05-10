@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script>-->
+    <style>
+		.fields{
+			position: relative;
+		}
+		/* Normal state field label */
+		.field_lbl{
+			/*Makes the label 'inside' the field*/
+			position: absolute;
+			/*Move the label down to offset the margin of the field*/
+			top: 20px;
+			/* Give some space on the left, just for aesthetics*/
+			margin-left: 10px;
+		}
+		.field{
+			/*Give some space on top of the field. pushes it down*/
+			margin-top: 20px;
+		}
+    </style>
+  </head>
+  <body>
+    <!-- page content -->
+    <div class="fields">
+    	<label class="field_lbl" for="">Field</label>
+    	<input class="field" type="text">
+    	<hr>
+    </div>
+    <div class="fields">
+    	<label class="field_lbl" for="">Field</label>
+    	<input class="field" type="text">
+    	<hr>
+    </div>
+  </body>
+</html>
