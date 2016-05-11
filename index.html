@@ -9,6 +9,10 @@
 		.fields{
 			position: relative;
 		}
+		.fields.is-focused .field_lbl{
+			top: 0px;
+			color: #111;
+		}
 		/* Normal state field label */
 		.field_lbl{
 			/*Makes the label 'inside' the field*/
@@ -17,12 +21,28 @@
 			top: 20px;
 			/* Give some space on the left, just for aesthetics*/
 			margin-left: 10px;
+			/* Make it look like a placeholder */
+			color: #ddd;
+			/* Animate the top transition */
+			-webkit-transition: top 1s; /* Safari */
+    		transition: top 1s;
 		}
 		.field{
 			/*Give some space on top of the field. pushes it down*/
 			margin-top: 20px;
 		}
     </style>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script>
+    	$(document).ready(function(){
+    		var $fields = $('.field');
+    		var fToggle = function(){
+    			$(this).parent().toggleClass('is-focused');
+    		};
+    		$fields.focus(fToggle);	
+    		$fields.focusout(fToggle);	
+    	});
+    </script>
   </head>
   <body>
     <!-- page content -->
